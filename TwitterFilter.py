@@ -19,9 +19,9 @@ def search_csv(ID):
     with open(RAW_FILE, 'r', encoding='UTF-8') as rawFile:
         # lines = csv.DictReader(rawFile)
         lines = csv.reader(rawFile)
-        writer = csv.writer(open(RESULT_FILE,'a+'))
+        writer = csv.writer(open(RESULT_FILE,'a'))
         for i, row in enumerate(lines):
-            if i == ID:
+            if i == (ID-1):
                 print(row)
                 writer.writerow(row)
                 break
